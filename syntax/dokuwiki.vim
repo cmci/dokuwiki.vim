@@ -35,7 +35,12 @@
 "And now, the syntax file:
 
 syntax clear
-so $VIM/syntax/Wikipedia.vim
+
+if has("win32") || has("win64"
+   so $VIM\syntax\Wikipedia.vim
+else
+   so $VIM/syntax/Wikipedia.vim
+endif
 
 "Mappings {{{1
 "
@@ -48,12 +53,18 @@ so $VIM/syntax/Wikipedia.vim
 "would be a hefty thing to download just for this.)
 "
 "Darn huge DokuWiki headings:
-imap <buffer> ,,h1 ====== <++> ======<++><Esc>k0<C-J>
-imap <buffer> ,,h2 ===== <++> =====<++><Esc>k0<C-J>
-imap <buffer> ,,h3 ==== <++> ====<++><Esc>k0<C-J>
-imap <buffer> ,,h4 === <++> ===<++><Esc>k0<C-J>
-imap <buffer> ,,h5 == <++> ==<++><Esc>k0<C-J>
-imap <buffer> ,,h6 = <++> =<++><Esc>k0<C-J>
+imap <buffer> ,,h1 ====== <++> ======
+<++><Esc>k0<C-J>
+imap <buffer> ,,h2 ===== <++> =====
+<++><Esc>k0<C-J>
+imap <buffer> ,,h3 ==== <++> ====
+<++><Esc>k0<C-J>
+imap <buffer> ,,h4 === <++> ===
+<++><Esc>k0<C-J>
+imap <buffer> ,,h5 == <++> ==
+<++><Esc>k0<C-J>
+imap <buffer> ,,h6 = <++> =
+<++><Esc>k0<C-J>
 
 "promote and demote
 imap <buffer> ,,hd <Esc>:s#=\(.*\)=#\1#<CR>:let @/ = ""<CR>
