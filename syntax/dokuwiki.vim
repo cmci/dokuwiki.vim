@@ -36,7 +36,7 @@
 
 syntax clear
 
-if has("win32") || has("win64"
+if has("win32") || has("win64")
    so $VIM\syntax\Wikipedia.vim
 else
    so $VIM/syntax/Wikipedia.vim
